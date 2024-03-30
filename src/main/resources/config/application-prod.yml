@@ -43,6 +43,11 @@ spring:
         prefer-ip-address: true
       host: localhost
       port: 8500
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/demoSearch
+  elasticsearch:
+    uris: http://localhost:9200
   thymeleaf:
     cache: true
 

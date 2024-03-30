@@ -21,6 +21,9 @@ logging:
     demo.jojoaddison: DEBUG
 
 management:
+  health:
+    elasticsearch:
+      enabled: false
   zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
@@ -54,6 +57,11 @@ spring:
           - git-branch=${git.branch:}
       host: localhost
       port: 8500
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/demoSearch
+  elasticsearch:
+    uris: http://localhost:9200
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

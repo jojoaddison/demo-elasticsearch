@@ -1,7 +1,9 @@
 package demo.jojoaddison;
 
 import demo.jojoaddison.config.AsyncSyncConfiguration;
+import demo.jojoaddison.config.EmbeddedElasticsearch;
 import demo.jojoaddison.config.EmbeddedKafka;
+import demo.jojoaddison.config.EmbeddedMongo;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -15,6 +17,8 @@ import org.springframework.test.annotation.DirtiesContext;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @SpringBootTest(classes = { DemoSearchApp.class, AsyncSyncConfiguration.class })
+@EmbeddedMongo
+@EmbeddedElasticsearch
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @EmbeddedKafka
 public @interface IntegrationTest {

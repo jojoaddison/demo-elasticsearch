@@ -94,6 +94,10 @@ management:
         autotime:
           enabled: true
 
+mongock:
+  migration-scan-package:
+    - demo.jojoaddison.config.dbmigrations
+
 spring:
   application:
     name: demoSearch
